@@ -79,19 +79,19 @@ export default function Purchase() {
               </div>
               <button
                 onClick={handleViewAchievements}
-                className="w-full h-12 bg-slate-900 text-white py-4 px-6 rounded-lg hover:bg-slate-800 transition-colors font-medium text-lg cursor-pointer"
+                className="w-full h-12 bg-slate-900 text-white px-6 rounded-lg hover:bg-slate-800 transition-colors font-medium text-lg cursor-pointer"
               >
                 View My Achievements
               </button>
             </div>
           ) : (
-            <div className='flex flex-col gap-5'>
-              <div className="mb-10">
+            <>
+              <div className="mb-8">
                 <h1 className="text-4xl font-bold text-gray-900">Complete Purchase</h1>
                 <p className="text-gray-600 text-lg">Fill in the details below to proceed</p>
               </div>
 
-              <form onSubmit={handleSubmit} className="flex flex-col gap-6">
+              <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
                   <label htmlFor="email" className="block text-lg font-semibold text-gray-900 mb-3">
                     Email Address
@@ -102,7 +102,7 @@ export default function Purchase() {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     required
-                    className="w-full h-12 text-lg border-2 border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-slate-900 focus:border-transparent transition-all placeholder:text-gray-400"
+                    className="w-full h-12 pl-3 text-lg border-2 border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-slate-900 focus:border-transparent transition-all placeholder:text-gray-400"
                     placeholder="john.doe@example.com"
                   />
                 </div>
@@ -122,7 +122,7 @@ export default function Purchase() {
                       required
                       min="1"
                       step="any"
-                      className="w-full h-12 text-lg border-2 border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-slate-900 focus:border-transparent transition-all placeholder:text-gray-400"
+                      className="w-full h-12 pl-3 text-lg border-2 border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-slate-900 focus:border-transparent transition-all placeholder:text-gray-400"
                       placeholder="1,000"
                     />
                   </div>
@@ -137,7 +137,7 @@ export default function Purchase() {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full h-12 bg-slate-900 text-white py-5 px-6 rounded-lg hover:bg-slate-800 transition-all duration-200 font-semibold text-lg disabled:opacity-60 disabled:cursor-not-allowed mt-8 cursor-pointer"
+                  className="w-full h-12 bg-slate-900 text-white px-6 rounded-lg hover:bg-slate-800 transition-all duration-200 font-semibold text-lg disabled:opacity-60 disabled:cursor-not-allowed mt-8 cursor-pointer"
                 >
                   {loading ? (
                     <span className="flex items-center justify-center gap-2">
@@ -152,7 +152,7 @@ export default function Purchase() {
                   )}
                 </button>
               </form>
-            </div>
+            </>
           )}
         </div>
       </div>
